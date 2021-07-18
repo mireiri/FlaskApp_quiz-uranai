@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>クイズ画面</title>
+    </head>
+    <body>
+        <p>問題に挑戦してみよう！（1問20点）</p>
+        <form method="POST" action="/answercheck">
+            {% for num, question in data %}
+                <p>問題{{ num }}：{{ question }}</p>
+                <input type="text" name="user_answer" size="10">
+            {% endfor %}
+            <br>
+            <br>
+            <input type="submit" value="送信">
+        </form>
+        <br>
+        <a href="/">戻る</a>
+    </body>
+</html>
